@@ -6,13 +6,16 @@
 #helpers.o: helpers.cpp helpers.h
 #	g++ -c helpers.cpp
 
-
-# inspired by slide 51 on intro lecture slides 
+# Kyle Sappington Ricardo Rodriguez
+# inspired by slide 51 on intro lecture slides
 averager: main.o myfunctions.o
-	g++ -o averager main.o myfunctions.o
+	g++ -o averager main.o myfunctions.o -g
+
 main.o: main.cpp myfunctions.h
-	g++ -c main.cpp
+	g++ -c main.cpp -g
+
 myfunctions.o: myfunctions.h myfunctions.cpp
-	g++ -c myfunctions.cpp
+	g++ -c myfunctions.cpp -g
+
 clean:
-rm *.o averager
+	rm *.o averager
